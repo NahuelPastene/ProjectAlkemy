@@ -1,0 +1,21 @@
+﻿@using ProjectAlkemy.Model
+@model User
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using (Html.BeginForm("Create", "User", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.FirstName)
+    @Html.TextBoxFor(x => x.FirstName)
+    @Html.LabelFor(x => x.LastName)
+    @Html.TextBoxFor(x => x.LastName)
+    @Html.LabelFor(x => x.Dni)
+    @Html.TextBoxFor(x => x.Dni)
+    @Html.LabelFor(x => x.IsTeacher)
+    @Html.CheckBoxFor(x => x.IsTeacher)
+    @Html.LabelFor(x => x.Active)
+    @Html.CheckBoxFor(x => x.Active)
+    <input type="submit" value="Create" class="btn btn-primary" />
+}
+
+

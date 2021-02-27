@@ -1,0 +1,23 @@
+﻿@using ProjectAlkemy.Model
+
+@model IEnumerable<User>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <th>Activo</th>
+    </tr>
+    @{ 
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Dni</td>
+            <td>@item.Active</td>
+        </tr>
+        }
+    }
+</table>

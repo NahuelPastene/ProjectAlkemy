@@ -1,0 +1,25 @@
+﻿@using ProjectAlkemy.Model
+
+@model IEnumerable<Subject>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>In</th>
+        <th>Out</th>
+        <th>Teacher</th>
+        <th>Max Students</th>
+    </tr>
+@{
+    foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.In</td>
+        <td>@item.Out</td>
+        <td>@item.Teacher</td>
+        <td>@item.MaxStudents</td>
+    </tr>
+    }
+}
+</table>
