@@ -12,7 +12,7 @@
     <title>Alkemy - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
@@ -61,13 +61,13 @@
                 <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Listado</span>
+                    <span>Lists</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="@Url.Action("Index","User")">Todos</a>
-                        <a class="collapse-item" href="@Url.Action("Index","User")">Profesores</a>
-                        <a class="collapse-item" href="@Url.Action("Index","User")">Alumnos</a>
+                        <a class="collapse-item" href="@Url.Action("Index","User")">All</a>
+                        <a class="collapse-item" href="@Url.Action("Index","User")">Teachers</a>
+                        <a class="collapse-item" href="@Url.Action("Index","User")">Students</a>
                     </div>
                 </div>
             </li>
@@ -149,7 +149,7 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                     src="img/undraw_profile.svg">
+                                     src="~/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -239,11 +239,11 @@
     <script src="~/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="~/vendor/chart.js/Chart.min.js"></script>
+    @*<script src="~/vendor/chart.js/Chart.min.js"></script>*@
 
     <!-- Page level custom scripts -->
-    <script src="~/js/demo/chart-area-demo.js"></script>
-    <script src="~/js/demo/chart-pie-demo.js"></script>
+    @*<script src="~/js/demo/chart-area-demo.js"></script>
+    <script src="~/js/demo/chart-pie-demo.js"></script>*@
     @RenderSection("Scripts", required: false)
 </body>
 
