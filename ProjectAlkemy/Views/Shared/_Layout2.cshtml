@@ -179,7 +179,11 @@
                 </nav>
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
-                <div class="container-fluid">@RenderSection("SeccionPrincipal", required: false)</div>
+                <div class="container-fluid">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
                 <!-- /.container-fluid -->
 
             </div>

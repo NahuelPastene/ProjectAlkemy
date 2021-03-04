@@ -7,50 +7,48 @@
 
 @model IEnumerable<User>
 
-@section SeccionPrincipal{
 
-    <div class="container-fluid">
-        <!-- DataTales Example -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Users</h6>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>@Html.LabelFor(x => x.First().FirstName)</th>
-                                <th>@Html.LabelFor(x => x.First().LastName)</th>
-                                <th>@Html.LabelFor(x => x.First().Dni)</th>
-                                <th>@Html.LabelFor(x => x.First().Active)</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>@Html.LabelFor(x => x.First().FirstName)</th>
-                                <th>@Html.LabelFor(x => x.First().LastName)</th>
-                                <th>@Html.LabelFor(x => x.First().Dni)</th>
-                                <th>@Html.LabelFor(x => x.First().Active)</th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            @{
-                                foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>@item.FirstName</td>
-                                        <td>@item.LastName</td>
-                                        <td>@item.Dni</td>
-                                        <td>@item.Active</td>
-                                    </tr>
-                                }
+<div class="container-fluid">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Users</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>@Html.LabelFor(x => x.First().FirstName)</th>
+                            <th>@Html.LabelFor(x => x.First().LastName)</th>
+                            <th>@Html.LabelFor(x => x.First().Dni)</th>
+                            <th>@Html.LabelFor(x => x.First().Active)</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>@Html.LabelFor(x => x.First().FirstName)</th>
+                            <th>@Html.LabelFor(x => x.First().LastName)</th>
+                            <th>@Html.LabelFor(x => x.First().Dni)</th>
+                            <th>@Html.LabelFor(x => x.First().Active)</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @{
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.FirstName</td>
+                                    <td>@item.LastName</td>
+                                    <td>@item.Dni</td>
+                                    <td>@item.Active</td>
+                                </tr>
                             }
-                        </tbody>
-                    </table>
-                </div>
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
-
     </div>
-}
+
+</div>

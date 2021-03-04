@@ -5,29 +5,17 @@
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-@section SeccionPrincipal{
-
-    <div class="container-fluid">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Users</h6>
-            </div>
-            <div class="card-body">
-                @using (Html.BeginForm("Create", "User", FormMethod.Post))
-                {
-                    @Html.LabelFor(x => x.FirstName)
-                    @Html.TextBoxFor(x => x.FirstName)
-                    @Html.LabelFor(x => x.LastName)
-                    @Html.TextBoxFor(x => x.LastName)
-                    @Html.LabelFor(x => x.Dni)
-                    @Html.TextBoxFor(x => x.Dni)
-                    @Html.LabelFor(x => x.IsTeacher)
-                    @Html.CheckBoxFor(x => x.IsTeacher)
-                    @Html.LabelFor(x => x.Active)
-                    @Html.CheckBoxFor(x => x.Active)
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                }
-            </div>
-        </div>
-    </div>
+@using (Html.BeginForm("Create", "User", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.FirstName)
+    @Html.TextBoxFor(x => x.FirstName)
+    @Html.LabelFor(x => x.LastName)
+    @Html.TextBoxFor(x => x.LastName)
+    @Html.LabelFor(x => x.Dni)
+    @Html.TextBoxFor(x => x.Dni)
+    @Html.LabelFor(x => x.IsTeacher)
+    @Html.CheckBoxFor(x => x.IsTeacher)
+    @Html.LabelFor(x => x.Active)
+    @Html.CheckBoxFor(x => x.Active)
+    <input type="submit" value="Create" class="btn btn-primary" />
 }
