@@ -21,6 +21,18 @@ namespace ProjectAlkemy.Repository.Repositories
             return user;
         }
 
+        public bool Delete(User user)
+        {
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+            return true;
+        }
+
+        public User GetById(int Id)
+        {
+            return _context.Users.Find(Id);
+        }
+
         public IEnumerable<User> GetAll()
         {
             return _context.Users;

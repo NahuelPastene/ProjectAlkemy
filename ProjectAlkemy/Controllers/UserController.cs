@@ -27,6 +27,13 @@ namespace ProjectAlkemy.Controllers
             return View(new User());
         }
 
+        public IActionResult Delete(int Id)
+        {
+            var user= _userRepository.GetById(Id);
+            _userRepository.Delete(user);
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public IActionResult Create(User user)
         {
