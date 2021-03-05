@@ -30,22 +30,22 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <div class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-university"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Alkemy</div>
-            </a>
+            </div>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <div class="nav-link">
+                    <i class="far fa-fw fa-bookmark"></i>
                     <span>Dashboard</span>
-                </a>
+                </div>
             </li>
 
             <!-- Divider -->
@@ -53,7 +53,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Usuarios
+                Users
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -75,7 +75,30 @@
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Action("Create","User")">
                     <i class="fas fa-fw fa-plus-circle"></i>
-                    <span>Crear</span>
+                    <span>Create</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Subjects
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index","Subject")">
+                    <i class="fas fa-fw fa-th-list"></i>
+                    <span>List</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Create","Subject")">
+                    <i class="fas fa-fw fa-plus-circle"></i>
+                    <span>Create</span>
                 </a>
             </li>
 
@@ -192,7 +215,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Nahuel Pastene 2021</span>
                     </div>
                 </div>
             </footer>
