@@ -23,6 +23,7 @@
                             <th>@Html.LabelFor(x => x.First().LastName)</th>
                             <th>@Html.LabelFor(x => x.First().Dni)</th>
                             <th>@Html.LabelFor(x => x.First().Active)</th>
+                            <th>@Html.LabelFor(x => x.First().IsTeacher)</th>
                             <th>@Html.Label("Actions")</th>
                         </tr>
                     </thead>
@@ -32,6 +33,7 @@
                             <th>@Html.LabelFor(x => x.First().LastName)</th>
                             <th>@Html.LabelFor(x => x.First().Dni)</th>
                             <th>@Html.LabelFor(x => x.First().Active)</th>
+                            <th>@Html.LabelFor(x => x.First().IsTeacher)</th>
                             <th>@Html.Label("Actions")</th>
                         </tr>
                     </tfoot>
@@ -44,6 +46,7 @@
                                     <td>@item.LastName</td>
                                     <td>@item.Dni</td>
                                     <td>@item.Active</td>
+                                    <td>@item.IsTeacher</td>
                                     <td><a href="@Url.Action("Delete","User",new {Id=item.Id})"><i class="fas fa-trash-alt" style="font-size: 18px;"></i></a></td>
                                 </tr>
                             }

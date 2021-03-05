@@ -1,25 +1,59 @@
-﻿@using ProjectAlkemy.Model
+﻿@{
+    ViewData["Title"] = "Subjects";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+@using ProjectAlkemy.Model
 
 @model IEnumerable<Subject>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>In</th>
-        <th>Out</th>
-        <th>Teacher</th>
-        <th>Max Students</th>
-    </tr>
-@{
-    foreach (var item in Model)
-    {
-    <tr>
-        <td>@item.Name</td>
-        <td>@item.In</td>
-        <td>@item.Out</td>
-        <td>@item.Teacher</td>
-        <td>@item.MaxStudents</td>
-    </tr>
-    }
-}
-</table>
+<div class="container-fluid">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Subjects</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>@Html.LabelFor(x => x.First().Name)</th>
+                            <th>@Html.LabelFor(x => x.First().In)</th>
+                            <th>@Html.LabelFor(x => x.First().Out)</th>
+                            <th>@Html.LabelFor(x => x.First().Teacher)</th>
+                            <th>@Html.LabelFor(x => x.First().MaxStudents)</th>
+                            <th>@Html.Label("Actions")</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>@Html.LabelFor(x => x.First().Name)</th>
+                            <th>@Html.LabelFor(x => x.First().In)</th>
+                            <th>@Html.LabelFor(x => x.First().Out)</th>
+                            <th>@Html.LabelFor(x => x.First().Teacher)</th>
+                            <th>@Html.LabelFor(x => x.First().MaxStudents)</th>
+                            <th>@Html.Label("Actions")</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @{
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.In</td>
+                                    <td>@item.Out</td>
+                                    <td>@item.Teacher</td>
+                                    <td>@item.MaxStudents</td>
+                                    <td><a href="@Url.Action("Delete","Subject",new {Id=item.Id})"><i class="fas fa-trash-alt" style="font-size: 18px;"></i></a></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
