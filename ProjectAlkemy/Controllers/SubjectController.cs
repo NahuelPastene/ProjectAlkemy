@@ -31,7 +31,7 @@ namespace ProjectAlkemy.Controllers
         public IActionResult Create(Subject subject)
         {
             subject = _subjectRepository.Create(subject);
-            return View(subject);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int Id)

@@ -24,7 +24,8 @@ namespace ProjectAlkemy.Repository.Repositories
 
         public bool Delete(User user)
         {
-            _context.Users.Remove(user);
+            user.Active = false;
+            _context.Users.Update(user);
             _context.SaveChanges();
             return true;
         }
@@ -36,16 +37,16 @@ namespace ProjectAlkemy.Repository.Repositories
 
         public IEnumerable<User> GetAll()
         {
-            return _context.Users;
+            return _context.Users.Where(x => x.Active);
         }
 
         public IEnumerable<User> GetTeachers()
         {
-            return _context.Users.Where(x=>x.IsTeacher);
+            return GetAll().Where(x => x.IsTeacher);
         }
         public IEnumerable<User> GetStudents()
         {
-            return _context.Users.Where(x => !x.IsTeacher);
+            return GetAll().Where(x => !x.IsTeacher);
         }
     }
 }

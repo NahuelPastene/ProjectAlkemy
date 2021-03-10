@@ -43,7 +43,7 @@ namespace ProjectAlkemy.Controllers
         public IActionResult Create(User user)
         {
             user = _userRepository.Create(user);
-            return View(user);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int Id)
