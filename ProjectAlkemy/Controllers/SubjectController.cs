@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using ProjectAlkemy.Model;
 using ProjectAlkemy.Repository.Repositories;
 using System;
@@ -11,9 +12,11 @@ namespace ProjectAlkemy.Controllers
     public class SubjectController : Controller
     {
         private readonly SubjectRepository _subjectRepository;
-        public SubjectController(SubjectRepository subjectRepository)
+        private readonly UserRepository _userRepository;
+        public SubjectController(SubjectRepository subjectRepository,UserRepository userRepository)
         {
             _subjectRepository = subjectRepository;
+            _userRepository = userRepository;
         }
         public IActionResult Index()
         {
@@ -24,6 +27,11 @@ namespace ProjectAlkemy.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            var teachers = 
+                _userRepository
+                    .GetTeachers()
+                    .Select(x=> new SelectListItem(x.FullName,x.Id.ToString()));
+            ViewData["Teachers"]=teachers;
             return View(new Subject());
         }
 

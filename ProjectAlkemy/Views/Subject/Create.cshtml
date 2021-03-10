@@ -41,7 +41,7 @@
                     @Html.LabelFor(x => x.Teacher)
                 </div>
                 <div class="col-10">
-                    @Html.TextBoxFor(x => x.Teacher)
+                    @Html.DropDownListFor(x => x.TeacherId,(IEnumerable<SelectListItem>)ViewData["Teachers"])
                 </div>
             </div>
 

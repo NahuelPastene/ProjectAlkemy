@@ -27,7 +27,7 @@ namespace ProjectAlkemy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AlkemyContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("ProjectAlkemy")));
+                options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("ProjectAlkemy")));
             services.AddControllersWithViews();
             services.AddTransient<UserRepository>();
             services.AddTransient<SubjectRepository>();

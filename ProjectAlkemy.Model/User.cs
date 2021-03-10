@@ -16,5 +16,6 @@ namespace ProjectAlkemy.Model
         public bool Active { get; set; }
         [DisplayName("Is Teacher")]
         public bool IsTeacher { get; set; }
+        public string FullName { get { return $"{LastName}, {FirstName}"; } }
     }
 }
