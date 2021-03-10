@@ -21,6 +21,18 @@ namespace ProjectAlkemy.Controllers
             return View(users);
         }
 
+        public IActionResult GetTeachers()
+        {
+            var users = _userRepository.GetTeachers();
+            return View("Index",users);
+        }
+
+        public IActionResult GetStudents()
+        {
+            var users = _userRepository.GetStudents();
+            return View("Index", users);
+        }
+
         [HttpGet]
         public IActionResult Create()
         {

@@ -1,6 +1,7 @@
 ﻿using ProjectAlkemy.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ProjectAlkemy.Repository.Repositories
@@ -36,6 +37,15 @@ namespace ProjectAlkemy.Repository.Repositories
         public IEnumerable<User> GetAll()
         {
             return _context.Users;
+        }
+
+        public IEnumerable<User> GetTeachers()
+        {
+            return _context.Users.Where(x=>x.IsTeacher);
+        }
+        public IEnumerable<User> GetStudents()
+        {
+            return _context.Users.Where(x => !x.IsTeacher);
         }
     }
 }
