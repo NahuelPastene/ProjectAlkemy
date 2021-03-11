@@ -12,6 +12,8 @@ namespace ProjectAlkemy.Model
         public string LastName { get; set; }
         [DisplayName("DNI")]
         public int Dni { get; set; }
+        [DisplayName("File")]
+        public string File { get; set; }
         [DisplayName("Active")]
         public bool Active { get; set; }
         [DisplayName("Is Teacher")]
