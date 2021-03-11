@@ -30,6 +30,13 @@ namespace ProjectAlkemy.Repository.Repositories
             return true;
         }
 
+        public bool Edit(User user)
+        {
+            _context.Users.Update(user);
+            _context.SaveChanges();
+            return true;
+        }
+
         public User GetById(int Id)
         {
             return _context.Users.Find(Id);

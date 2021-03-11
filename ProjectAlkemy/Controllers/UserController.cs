@@ -36,7 +36,7 @@ namespace ProjectAlkemy.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View(new User());
+            return View("Create");
         }
 
         [HttpPost]
@@ -50,6 +50,21 @@ namespace ProjectAlkemy.Controllers
         {
             var user = _userRepository.GetById(Id);
             _userRepository.Delete(user);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int Id)
+        {
+            var user = _userRepository.GetById(Id);
+            _userRepository.Edit(user);
+            return View("Edit", user);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(User user)
+        {
+            _userRepository.Edit(user);
             return RedirectToAction("Index");
         }
     }
