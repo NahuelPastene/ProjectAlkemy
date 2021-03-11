@@ -48,5 +48,25 @@ namespace ProjectAlkemy.Controllers
             _subjectRepository.Delete(subject);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Edit(int Id)
+        {
+            var subject = _subjectRepository.GetById(Id);
+            var teachers =
+                _userRepository
+                    .GetTeachers()
+                    .Select(x => new SelectListItem(x.FullName, x.Id.ToString()));
+            ViewData["Teachers"] = teachers;
+            _subjectRepository.Edit(subject);
+            return View("Edit", subject);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Subject subject)
+        {
+            _subjectRepository.Edit(subject);
+            return RedirectToAction("Index");
+        }
     }
 }

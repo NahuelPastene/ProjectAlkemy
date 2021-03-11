@@ -28,6 +28,13 @@ namespace ProjectAlkemy.Repository.Repositories
             return true;
         }
 
+        public bool Edit(Subject subject)
+        {
+            _context.Subjects.Update(subject);
+            _context.SaveChanges();
+            return true;
+        }
+
         public Subject GetById(int Id)
         {
             return _context.Subjects.Find(Id);

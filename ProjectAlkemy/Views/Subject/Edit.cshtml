@@ -1,0 +1,61 @@
+﻿@using ProjectAlkemy.Model
+@model Subject
+@{
+    ViewData["Title"] = "Subjects";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Subject", FormMethod.Post))
+{
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-2">
+                    @Html.LabelFor(x => x.Name)
+                </div>
+                <div class="col-10">
+                    @Html.TextBoxFor(x => x.Name)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    @Html.LabelFor(x => x.In)
+                </div>
+                <div class="col-10">
+                    @Html.TextBoxFor(x => x.In)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    @Html.LabelFor(x => x.Out)
+                </div>
+                <div class="col-10">
+                    @Html.TextBoxFor(x => x.Out)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    @Html.LabelFor(x => x.Teacher)
+                </div>
+                <div class="col-10">
+                    @Html.DropDownListFor(x => x.TeacherId, (IEnumerable<SelectListItem>)ViewData["Teachers"])
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    @Html.LabelFor(x => x.MaxStudents)
+                </div>
+                <div class="col-10">
+                    @Html.TextBoxFor(x => x.MaxStudents)
+                </div>
+            </div>
+            <div class="row float-right pr-3">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
